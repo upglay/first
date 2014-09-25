@@ -1,7 +1,7 @@
 package dotCom;
 
 public class dotComGame {
-	
+/*
 	public static void main(String[] args) {
 		int numOfGuesses = 0;
 		GameHelper helper = new GameHelper();
@@ -23,5 +23,5 @@ public class dotComGame {
 		}
 		
 	}
-
+*/
 }

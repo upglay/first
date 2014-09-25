@@ -1,5 +1,7 @@
 package dotCom;
 
+import java.util.ArrayList;
+
 public class dotCom {
 /*
 	public static void main(String[] args) {
@@ -7,33 +9,35 @@ public class dotCom {
 
 	}
 */
-	int[] locationCells;
-	int numOfHits = 0;
+	private ArrayList<String> locationCells;
+	private String name;
 	
-	public void setLocationCells(int[] locs){
+	public void setLocationCells(ArrayList<String> locs){
 		locationCells = locs;
 	}
 	
-	public String checkYourself (String stringGuess){
+	public String checkYourself (String userInput){
 		
-		int guess = Integer.parseInt(stringGuess);
 		
 		String result = "miss";
 		
-		for(int i = 0; i < locationCells.length; i++){
-			if(guess == locationCells[i]){
+		int index = locationCells.indexOf(userInput);
+		
+		if(index >= 0){
+			locationCells.remove(index);
+			
+			if(locationCells.isEmpty()){
+				result = "kill";
+			} else{
 				result = "hit";
-				numOfHits++;
-				break;
 			}
 		}
 		
-		if(numOfHits == locationCells.length){
-			result = "kill";
-		}
-		
-		System.out.println(result);
-		
 		return result;
+	}
+
+	public void setName(String n) {
+		// TODO Auto-generated method stub
+		name = n;
 	}	
 }
